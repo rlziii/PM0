@@ -1,0 +1,38 @@
+README
+
+PM/0 System
+
+To Compile
+----------
+The correct way to compile this is as follows:
+    gcc -o PM0 PM0_LA.c PM0_PCG.c PM0_VM.c PM0_Compiler.c
+
+To Execute
+----------
+There are five flags/arguments for this program
+Two of these are REQUIRED, three are OPTIONAL
+The required format is as follows:
+    ./PM0 -i [input file] -o [output file]
+
+There are also three optional flags/arguments
+    -a      Output the list of lexemes/tokens to the screen
+    -l      Output the generated assembly code to the screen
+    -v      Output the virtual machine execution trace to the screen
+These flags/arguments can also be used in any combination
+
+The following will print out everything:
+    ./PM0 -alv -i [input file] -o [output file]
+
+The program produces the following files:
+    la_output.txt       Output from Lexical Analyzer (PM0_LA)
+
+    pcg_output.txt      Output from Parser-Code Generator (PM0_PCG)
+
+    [output file]       Output from Virtual Machine (PM0_VM)
+
+A test file is included:
+    test.txt
+It can be ran through the program as follows:
+    ./PM0 -i test.txt -o test.out
+Or with all flags/arguments set to print to the screen:
+    ./PM0 -alv -i test.txt -o test.out
